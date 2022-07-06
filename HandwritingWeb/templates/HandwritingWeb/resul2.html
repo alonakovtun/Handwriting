@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load static%}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rowdies&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{%static 'styles.css'%}">
+    <script type="text/javascript" src="{%static 'script.js'%}"></script>
+    <title>Handconvert</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <p class="header_left">Handconvert</p>
+            <p class="header_right"> <a class="link" href="http://127.0.0.1:8000/">Back</a></p>
+        </div>
+        <div class="block">
+            <p class="block_title">Your image is now a text!</p>
+
+            <div class="result">
+                <div class="result_item">
+                    <figure>
+                        <p><img src="{{filename}}" alt="Your image"></p>
+                        <figcaption>Your image</figcaption>
+                    </figure>
+                </div>
+                <div class="result_item">
+                    <i style="font-size:54px" class="fa">&#xf0a9;</i>
+                </div>
+                <div class="result_item">
+                        <p style=" font-size: 50px" >{{ answer }}</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

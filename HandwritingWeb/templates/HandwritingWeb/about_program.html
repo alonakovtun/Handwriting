@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% load static%}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rowdies&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="{%static 'styles.css'%}">
+    <script type="text/javascript" src="{%static 'script.js'%}"></script>
+    <title>Handconvert</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <p class="header_left">Handconvert</p>
+            <p class="header_right"> <a class="link" href="http://127.0.0.1:8000/">Back</a></p>
+        </div>
+        <div class="block">
+            <p class="block_title">About program</p>
+            <p class="block_list">
+                Offline Handwritten Text Recognition (HTR) systems transcribe text contained in scanned images into digital text, an example is shown in Fig. 1. We built a Neural Network (NN) which is trained on word-images from the IAM dataset. As the input layer (and
+                therefore also all the other layers) can be kept small for word-images, NN-training is feasible on the CPU. This implementation is the bare minimum that is needed for HTR using TF.
+            </p>
+            <figure>
+                <p><img src="{% static 'img/example.png' %}" alt="example"></p>
+                <figcaption>Fig. 1: Image of word (taken from IAM) and its transcription into digital text.</figcaption>
+            </figure>
+
+            <p class="block_list">
+                We use a NN for our task. It consists of convolutional NN (CNN) layers, recurrent NN (RNN) layers and a final Connectionist Temporal Classification (CTC) layer. Fig. 2 shows an overview of our HTR system.
+            </p>
+            <figure>
+                <p><img src="{% static 'img/example2.png' %}" alt="example2"></p>
+                <figcaption>Fig. 2: Overview of the NN operations (green) and the data flow through the NN (pink).</figcaption>
+            </figure>
+
+            <p class="block_list">
+                We can also view the NN in a more formal way as a function (see Eq. 1) which maps an image (or matrix) M of size W×H to a character sequence (c1, c2, …) with a length between 0 and L. As you can see, the text is recognized on character-level, therefore
+                words or texts not contained in the training data can be recognized too (as long as the individual characters get correctly classified).
+
+            </p>
+            <figure>
+                <p><img src="{% static 'img/example3.png' %}" alt="example3"></p>
+                <figcaption>Eq. 1: The NN written as a mathematical function which maps an image M to a character sequence (c1, c2, …).</figcaption>
+            </figure>
+        </div>
+    </div>
+</body>
+
+</html>
